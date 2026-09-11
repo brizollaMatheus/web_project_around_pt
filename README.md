@@ -67,4 +67,4 @@ Matheus Brizolla
 
 ## Link do projeto
 
-[Visualizar projeto no GitHub Pages](COLOQUE-SEU-LINK-AQUI)
+[Visualizar projeto no GitHub Pages](https://brizollamatheus.github.io/web_project_around_pt/)
