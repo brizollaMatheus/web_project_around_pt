@@ -1,0 +1,20 @@
+{
+  "name": "web_project_around_pt",
+  "version": "0.0.1",
+  "description": "Education",
+  "homepage": "https://github.com/brizollaMatheus/web_project_around_pt#readme",
+  "bugs": {
+    "url": "https://github.com/brizollaMatheus/web_project_around_pt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brizollaMatheus/web_project_around_pt.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
