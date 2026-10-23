@@ -4,25 +4,53 @@
 
 ## Descrição do projeto
 
-Around The U.S. é uma página interativa desenvolvida durante o bootcamp de Desenvolvimento Web da TripleTen.
+Around The U.S. é uma aplicação web interativa desenvolvida durante o bootcamp de Desenvolvimento Web da TripleTen.
 
-O projeto permite visualizar cartões de diferentes locais, editar as informações do perfil, adicionar novos cartões, curtir e excluir cartões e visualizar imagens em tamanho ampliado.
+A aplicação permite visualizar cartões de diferentes locais, editar as informações do perfil, alterar a foto do usuário, adicionar novos cartões, curtir e excluir cartões e visualizar imagens em tamanho ampliado.
 
-Nesta etapa, o código JavaScript foi refatorado utilizando Programação Orientada a Objetos (POO), com a criação de classes responsáveis por diferentes partes da aplicação. Também foram aplicados conceitos de herança, encapsulamento e separação de responsabilidades.
+Nesta etapa do projeto, a aplicação foi integrada a uma API REST, permitindo que as informações do usuário, cartões, curtidas e demais alterações sejam armazenadas no servidor e persistam mesmo após recarregar a página.
+
+O projeto utiliza Programação Orientada a Objetos (POO), Promises e requisições HTTP para organizar a aplicação e realizar a comunicação com o servidor.
 
 ## Funcionalidades
 
+- Carregamento das informações do usuário através da API;
+- Carregamento dos cartões armazenados no servidor;
 - Editar nome e descrição do perfil;
+- Alterar a foto do perfil;
 - Adicionar novos cartões;
-- Curtir e remover cartões;
+- Curtir e remover curtidas dos cartões;
+- Excluir cartões criados pelo próprio usuário;
+- Confirmação antes da exclusão de um cartão;
+- Persistência das alterações através da API;
 - Visualizar imagens em um pop-up;
 - Validação dos formulários em tempo real;
 - Exibição de mensagens de erro;
 - Ativação e desativação dos botões conforme a validade dos formulários;
+- Feedback visual durante o envio dos formulários com a mensagem "Salvando...";
 - Fechamento dos pop-ups pelo botão de fechar;
 - Fechamento dos pop-ups ao clicar na sobreposição;
 - Fechamento dos pop-ups utilizando a tecla Esc;
 - Redefinição dos formulários ao fechar os pop-ups.
+
+## Integração com API
+
+A aplicação utiliza uma API REST para buscar e atualizar os dados da página.
+
+As requisições permitem:
+
+- Obter as informações do usuário;
+- Obter os cartões iniciais;
+- Atualizar nome e descrição do perfil;
+- Atualizar a foto do perfil;
+- Adicionar novos cartões;
+- Excluir cartões;
+- Adicionar curtidas;
+- Remover curtidas.
+
+As requisições são realizadas utilizando `fetch` e Promises. As respostas do servidor são verificadas antes da conversão para JSON e possíveis erros são tratados através de `catch()`.
+
+O carregamento inicial das informações do usuário e dos cartões é realizado em conjunto utilizando `Promise.all()`.
 
 ## Arquitetura JavaScript
 
@@ -33,8 +61,10 @@ O projeto utiliza classes para separar as responsabilidades da aplicação:
 - `Popup` — classe base responsável pela abertura e fechamento dos pop-ups;
 - `PopupWithImage` — herda de `Popup` e controla o pop-up de visualização de imagens;
 - `PopupWithForm` — herda de `Popup` e controla os pop-ups que possuem formulários;
+- `PopupWithConfirmation` — herda de `Popup` e controla o pop-up de confirmação para exclusão de cartões;
 - `UserInfo` — responsável por obter e atualizar as informações do perfil;
-- `FormValidator` — responsável pela validação dos formulários.
+- `FormValidator` — responsável pela validação dos formulários;
+- `Api` — responsável pela comunicação da aplicação com o servidor.
 
 ## Tecnologias utilizadas
 
@@ -45,6 +75,10 @@ O projeto utiliza classes para separar as responsabilidades da aplicação:
 - Classes e herança
 - DOM
 - Eventos
+- Fetch API
+- REST API
+- Promises
+- JSON
 - Constraint Validation API
 - Metodologia BEM
 - Flexbox
@@ -66,6 +100,11 @@ O projeto utiliza a API de validação nativa do navegador para verificar os cam
 
 - Título obrigatório;
 - Título entre 2 e 30 caracteres;
+- Link da imagem obrigatório;
+- Link deve possuir uma URL válida.
+
+### Alterar Foto do Perfil
+
 - Link da imagem obrigatório;
 - Link deve possuir uma URL válida.
 
